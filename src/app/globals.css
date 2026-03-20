@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-primary { @apply bg-indigo-600 text-white rounded-lg px-4 py-2 text-sm font-medium active:scale-95 w-full text-center; }
+.btn-secondary { @apply border border-slate-300 rounded-lg px-3 py-2 text-sm font-medium bg-white active:scale-95; }
+.btn-outline { @apply border border-slate-300 text-slate-700 rounded-lg px-3 py-2 text-sm active:scale-95; }
+.input { @apply w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500; }
+.card { @apply rounded-xl border border-slate-200 bg-white p-3 shadow-sm; }
+.badge { @apply inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-700; }
+
+/* Статусные цвета */
+.status-new { @apply bg-slate-200 text-slate-800; }
+.status-thinking { @apply bg-sky-100 text-sky-800; }
+.status-warm { @apply bg-amber-100 text-amber-800; }
+.status-hot { @apply bg-orange-200 text-orange-800; }
+.status-call_later { @apply bg-blue-100 text-blue-800; }
+.status-revisit { @apply bg-purple-100 text-purple-800; }
+.status-not_relevant { @apply bg-gray-200 text-gray-700; }
+.status-refused { @apply bg-gray-300 text-gray-800; }
+.status-connected { @apply bg-green-100 text-green-800; }
+
+.priority-dot { @apply inline-block w-2 h-2 rounded-full align-middle mr-1; }
+.priority-low { @apply bg-slate-400; }
+.priority-medium { @apply bg-blue-500; }
+.priority-high { @apply bg-red-500; }
+
+.bottom-nav { @apply fixed bottom-0 left-0 right-0 z-30 bg-white/95 border-t border-slate-200 backdrop-blur; }
+.bottom-nav ul { @apply grid grid-cols-4 text-sm list-none m-0 p-0; }
+.bottom-nav a { @apply flex flex-col items-center py-2 text-slate-600 font-medium; }
+.bottom-nav a.active { @apply text-indigo-600; }
