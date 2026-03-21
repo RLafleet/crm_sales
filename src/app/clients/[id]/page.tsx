@@ -4,6 +4,8 @@ import ContactTimeline from '@/components/contact-timeline';
 import TaskList from '@/components/task-list';
 import FollowupQuick from '@/components/followup-quick';
 
+export const dynamic = 'force-dynamic';
+
 export default async function ClientDetail({ params }: { params: { id: string } }) {
   const client = await prisma.client.findUnique({
     where: { id: params.id },

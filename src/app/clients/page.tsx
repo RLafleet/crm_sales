@@ -2,6 +2,8 @@ import ClientCard from '@/components/client-card';
 import Filters from '@/components/filters';
 import { prisma } from '@/lib/prisma';
 
+export const dynamic = 'force-dynamic';
+
 type Search = { [key: string]: string | string[] | undefined };
 
 export default async function ClientsPage({ searchParams }: { searchParams: Search }) {

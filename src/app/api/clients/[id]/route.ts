@@ -1,6 +1,8 @@
 import { prisma } from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(_: Request, { params }: { params: { id: string } }) {
   const client = await prisma.client.findUnique({ where: { id: params.id } });
   return NextResponse.json(client);

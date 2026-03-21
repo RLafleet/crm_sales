@@ -1,6 +1,8 @@
 import TaskList from '@/components/task-list';
 import { prisma } from '@/lib/prisma';
 
+export const dynamic = 'force-dynamic';
+
 export default async function FollowUps() {
   const tasks = await prisma.followUpTask.findMany({
     where: { status: 'open' },

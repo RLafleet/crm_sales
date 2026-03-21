@@ -1,6 +1,8 @@
 import ClientForm from '@/components/client-form';
 import { prisma } from '@/lib/prisma';
 
+export const dynamic = 'force-dynamic';
+
 export default async function EditClient({ params }: { params: { id: string } }) {
   const client = await prisma.client.findUnique({ where: { id: params.id } });
   if (!client) return <div>Not found</div>;

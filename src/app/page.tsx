@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
 import TaskList from '@/components/task-list';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Dashboard() {
   const now = new Date();
   const end = new Date();

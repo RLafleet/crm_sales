@@ -15,7 +15,7 @@ type ClientInput = {
   apartment?: string | null;
   leadStatus?: string;
   leadPriority?: string;
-  nextFollowUpAt?: string | null;
+  nextFollowUpAt?: string | Date | null;
   notes?: string | null;
 };
 
@@ -32,7 +32,7 @@ export default function ClientForm({ client }: { client?: ClientInput }) {
     const d = new Date();
     d.setDate(d.getDate() + offsetDays);
     d.setHours(hour, 0, 0, 0);
-    setData({ ...data, nextFollowUpAt: d.toISOString().slice(0, 16) });
+    setData({ ...data, nextFollowUpAt: d });
   };
 
   async function submit(e: React.FormEvent) {
@@ -111,7 +111,14 @@ export default function ClientForm({ client }: { client?: ClientInput }) {
           <input
             className="input"
             type="datetime-local"
-            value={data.nextFollowUpAt?.toString().slice(0, 16) || ''}
+            value={
+              data.nextFollowUpAt
+                ? (data.nextFollowUpAt instanceof Date
+                    ? data.nextFollowUpAt.toISOString()
+                    : data.nextFollowUpAt
+                  ).slice(0, 16)
+                : ''
+            }
             onChange={(e) => setData({ ...data, nextFollowUpAt: e.target.value })}
           />
           <div className="flex flex-col gap-1 text-xs">
